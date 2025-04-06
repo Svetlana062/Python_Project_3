@@ -37,7 +37,11 @@ pip-log.txt
 pip-delete-this-directory.txt
 
 # Unit test / coverage reports
+<<<<<<< HEAD
 htmlcov/
+=======
+# htmlcov/
+>>>>>>> 1f9cf2b (adding data)
 .tox/
 .nox/
 .coverage
@@ -56,7 +60,11 @@ cover/
 *.pot
 
 # Django stuff:
+<<<<<<< HEAD
 *.log
+=======
+#*.log
+>>>>>>> 1f9cf2b (adding data)
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
@@ -94,12 +102,15 @@ ipython_config.py
 #   install all needed dependencies.
 #Pipfile.lock
 
+<<<<<<< HEAD
 # UV
 #   Similar to Pipfile.lock, it is generally recommended to include uv.lock in version control.
 #   This is especially recommended for binary packages to ensure reproducibility, and is more
 #   commonly ignored for libraries.
 #uv.lock
 
+=======
+>>>>>>> 1f9cf2b (adding data)
 # poetry
 #   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
 #   This is especially recommended for binary packages to ensure reproducibility, and is more
@@ -167,8 +178,6 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-# Ruff stuff:
-.ruff_cache/
-
 # PyPI configuration file
 .pypirc
+.idea/
