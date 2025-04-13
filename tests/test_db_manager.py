@@ -20,6 +20,8 @@ class TestDBManager(unittest.TestCase):
         # Проверяем, что команды на удаление и создание таблиц были выполнены
         self.db_manager.cursor.execute.assert_any_call("DROP TABLE IF EXISTS companies;")
         self.db_manager.cursor.execute.assert_any_call("DROP TABLE IF EXISTS vacancies;")
+
+        # Проверяем создание таблицы companies
         self.db_manager.cursor.execute.assert_any_call(
             """
             CREATE TABLE IF NOT EXISTS companies (
@@ -27,8 +29,10 @@ class TestDBManager(unittest.TestCase):
                 name VARCHAR(255) NOT NULL,
                 hh_id INT UNIQUE NOT NULL
             );
-        """
+            """
         )
+
+        # Проверяем создание таблицы vacancies
         self.db_manager.cursor.execute.assert_any_call(
             """
             CREATE TABLE IF NOT EXISTS vacancies (
@@ -38,7 +42,7 @@ class TestDBManager(unittest.TestCase):
                 url VARCHAR(255) NOT NULL,
                 company_id INT REFERENCES companies(id)
             );
-        """
+            """
         )
 
     def test_save_company(self):

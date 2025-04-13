@@ -1,7 +1,7 @@
 import json
 
-from src.vacancy_manager import VacancyManager
 from src.db_manager import DBManager
+from src.vacancy_manager import VacancyManager
 
 
 class UserInteraction:
@@ -12,6 +12,7 @@ class UserInteraction:
 
     @staticmethod
     def load_companies(file_path):
+        """Чтение JSON файла."""
         try:
             with open(file_path) as f:
                 return json.load(f)

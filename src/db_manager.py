@@ -9,8 +9,6 @@ class DBManager:
         self.connection = None
         self.cursor = None
         self.connect()
-        self.connection = psycopg2.connect(...)
-        self.cursor = self.connection.cursor()
 
     def connect(self):
         """Подключение к серверу базы данных PostgreSQL."""
@@ -18,6 +16,7 @@ class DBManager:
             params = config()
             self.connection = psycopg2.connect(**params)
             self.cursor = self.connection.cursor()
+            print("Соединение с базой данных успешно установлено.")
         except Exception as e:
             print(f"Ошибка подключения к базе данных: {e}")
 
@@ -32,7 +31,7 @@ class DBManager:
                 name VARCHAR(255) NOT NULL,
                 hh_id INT UNIQUE NOT NULL
             );
-        """
+            """
         )
         self.cursor.execute(
             """
@@ -43,7 +42,7 @@ class DBManager:
                 url VARCHAR(255) NOT NULL,
                 company_id INT REFERENCES companies(id)
             );
-        """
+            """
         )
         self.connection.commit()
 
@@ -52,7 +51,7 @@ class DBManager:
         try:
             insert_company = "INSERT INTO companies (name, id) VALUES (%s, %s) ON CONFLICT (id) DO NOTHING;"
             self.cursor.execute(insert_company, (company["name"], company["id"]))
-            self.connection.commit()  # Не забудьте зафиксировать изменения
+            self.connection.commit()
         except Exception as e:
             print(f"Ошибка при сохранении компании {company['name']}: {e}")
 
