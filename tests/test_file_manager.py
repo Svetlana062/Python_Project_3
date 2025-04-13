@@ -1,6 +1,6 @@
 import unittest
-
 from unittest.mock import mock_open, patch
+
 from src.file_manager import FileManager
 
 

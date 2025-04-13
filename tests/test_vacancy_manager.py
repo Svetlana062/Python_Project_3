@@ -1,5 +1,6 @@
 import unittest
-from unittest.mock import patch, Mock
+from unittest.mock import Mock, patch
+
 from src.vacancy_manager import VacancyManager  # Убедитесь, что путь к вашему классу правильный
 
 

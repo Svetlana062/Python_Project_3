@@ -1,4 +1,5 @@
 import psycopg2
+
 from config import config
 
 
@@ -66,9 +67,9 @@ class DBManager:
     def get_companies_and_vacancies_count(self):
         """Получение списка всех компаний и количества вакансий у каждой компании."""
         query = """
-        SELECT c.name, COUNT(v.id) AS vacancies_count 
-        FROM companies c 
-        LEFT JOIN vacancies v ON c.id = v.company_id 
+        SELECT c.name, COUNT(v.id) AS vacancies_count
+        FROM companies c
+        LEFT JOIN vacancies v ON c.id = v.company_id
         GROUP BY c.name;
         """
 
@@ -78,8 +79,8 @@ class DBManager:
     def get_all_vacancies(self):
         """Получение списка всех вакансий с указанием названия компании и зарплаты."""
         query = """
-        SELECT v.title, v.salary, c.name AS company_name, v.url 
-        FROM vacancies v 
+        SELECT v.title, v.salary, c.name AS company_name, v.url
+        FROM vacancies v
         JOIN companies c ON v.company_id = c.id;
         """
 

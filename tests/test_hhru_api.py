@@ -1,5 +1,6 @@
 import unittest
-from unittest.mock import patch, Mock
+from unittest.mock import Mock, patch
+
 from src.hhru_api import HeadHunterAPI  # Убедитесь, что путь к вашему классу правильный
 
 

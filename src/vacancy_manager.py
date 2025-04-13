@@ -1,5 +1,5 @@
-from src.hhru_api import HeadHunterAPI
 from src.file_manager import FileManager
+from src.hhru_api import HeadHunterAPI
 
 
 class VacancyManager:
